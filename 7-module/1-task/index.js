@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Функция декоратор makeLogging(fn, log), для функции fn
@@ -7,6 +7,10 @@
  * @param {Array} log - массив для записи логов
  * @return {Function}
  */
-function makeLogging(fn, log) {
 
+function makeLogging(fn, logging) {
+  return function() {
+    logging.push([...arguments]);
+    return fn.apply(this, arguments);
+  };
 }
