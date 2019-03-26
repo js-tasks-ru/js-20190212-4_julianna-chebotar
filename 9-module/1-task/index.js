@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Функция выполняет наследование
@@ -6,6 +6,5 @@
  * @param {Function} Parent - родительский класс
  */
 function extendClass(Main, Parent) {
-    // здесь ваш код наследования
+  Main.prototype.__proto__ = Parent.prototype;
 }
-
